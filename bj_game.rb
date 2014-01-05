@@ -1,5 +1,4 @@
-# Interactive command line blackjack game
-
+# my original attempt at the blackjack game is the precourse_work repo.
 
 def calculate_total(cards) 
   # [['H', '3'], ['S', 'Q'], ... ]
