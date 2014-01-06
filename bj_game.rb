@@ -1,7 +1,6 @@
 # my original attempt at the blackjack game is the precourse_work repo.
 
 def calculate_total(cards) 
-  # [['H', '3'], ['S', 'Q'], ... ]
   arr = cards.map{|e| e[1] }
 
   total = 0
@@ -30,7 +29,10 @@ puts "Welcome to Blackjack!"
 suits = ['H', 'D', 'S', 'C']
 cards = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
 
+#uses six decks
 deck = suits.product(cards)
+5.times { deck << suits.product(cards) }
+
 deck.shuffle!
 
 # Deal Cards
@@ -48,7 +50,7 @@ mytotal = calculate_total(mycards)
 
 # Show Cards
 
-puts "Dealer has: #{dealercards[0]} and #{dealercards[1]}, for a total of #{dealertotal}"
+puts "Dealer has: #{dealercards[0]} showing"
 puts "You have: #{mycards[0]} and #{mycards[1]}, for a total of: #{mytotal}"
 puts ""
 
@@ -89,7 +91,8 @@ while mytotal < 21
 end
 
 # Dealer turn
-
+puts " "
+puts "Dealer has: #{dealercards[0]} and #{dealercards[1]}."
 if dealertotal == 21
   puts "Sorry, dealer hit blackjack. You lose."
   exit
